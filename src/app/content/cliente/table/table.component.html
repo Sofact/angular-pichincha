@@ -1,0 +1,25 @@
+<div class="tabla-container">
+<table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Contraseña</th>
+        <th>Estado</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of cliente | filtroPorNombre:filtro">
+        <td >{{ client.perNombre }}</td>
+        <td>{{ client.perDireccion }}</td>
+        <td >{{ client.perTelefono }}</td>
+        <td >{{ client.cliContrasena }}</td> 
+        <td>{{ client.cliEstado }}</td>
+        <td><button (click)="update(client.perId)">actualizar</button> <button (click)="delete(client.perId)">borrar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  

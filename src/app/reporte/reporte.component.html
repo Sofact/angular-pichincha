@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="inside-container">
+      <h1>Reportes</h1>
+  
+      <div class="top-content">
+        <label for="inicio">Fecha Inicio</label>
+        <input type="date" name="inicio" [(ngModel)]="fechainicio">
+
+        <label for="inicio">Fecha Fin</label>
+        <input type="date" name="inicio" [(ngModel)]="fechaFin">
+        <div>
+            <label for="inicio">Seleccione el cliente</label>
+            <select  [(ngModel)]="opcionSeleccionada" (change)="capturarId()"  [ngModelOptions]="{ standalone: true }">
+                <option  class="form-control" *ngFor="let persona of personas" [value]="persona.perId">{{ persona.perNombre }}</option>
+              </select>
+        </div>
+        <button class="btn-search" (click)="generar()">Buscar</button>
+        <button class="btn-search" (click)="descargar()">Descargar PDF</button>
+      </div>
+
+      <div class="container-table">
+        <div class="tabla-container">
+            <table>
+                <thead>
+                  <tr>
+                    
+                    <th>Cliente</th>
+                    <th>Numero Cuenta</th>
+                    <th>Tipo cuenta</th>
+                    <th>Saldo inicial</th>
+                    <th>Total Debitos</th>
+                    <th>Total Creditos</th>
+                    <th>Saldo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let reporte of reportes ">
+                    <td >{{ reporte.perNombre}}</td>
+                    <td>{{ reporte.ctaNumero }}</td>
+                    <td >{{ reporte.ctaTipoCuenta }}</td>
+                    <td>{{ reporte.ctaSaldoInicial }}</td>
+                    <td>{{ reporte.totalDebitos }}</td>
+                    <td>{{ reporte.totalCreditos }}</td>
+                    <td>{{ reporte.movSaldo }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+      </div>
+    </div>
+  </div>

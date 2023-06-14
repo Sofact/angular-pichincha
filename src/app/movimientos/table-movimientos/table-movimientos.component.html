@@ -1,0 +1,31 @@
+<div class="tabla-container">
+    <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Cliente</th>
+            <th>Numero Cuenta</th>
+            <th>Tipo cuenta</th>
+            <th>Saldo inicial</th>
+            <th>Estado</th>
+            <th>Movimiento</th>
+            <th>Saldo Disponible</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let movimiento of movimientos | filtroMovimiento: filtro">
+            <td >{{ movimiento.movfecha | date: 'dd/MM/yyyy'}}</td>
+            <td>{{ movimiento.perNombre }}</td>
+            <td >{{ movimiento.ctaNumero }}</td>
+            <td>{{ movimiento.ctaTipoCuenta }}</td>
+            <td>{{ movimiento.ctaSaldoInicial }}</td>
+            <td>{{ movimiento.movEstado }}</td>
+            <td>{{  movimiento.movTipo === 'Retiro' ? '-' + (movimiento.movValor) : movimiento.movValor}}</td>
+            <td>{{ movimiento.movSaldo }}</td>
+            <td><button (click)="update(movimiento.ctaId)">Nuevo Movimiento</button> <button (click)="delete(movimiento.movId)">borrar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      

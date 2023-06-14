@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="inside-container">
+      <h1>Clientes</h1>
+  
+      <div class="top-content">
+        <input type="text" class="input-search" placeholder="Enter para buscar..." [(ngModel)]="query" (keyup.enter)="buscar()" />
+        <button class="btn-search" (click)="guardar()">Nuevo</button>
+      </div>
+
+      <div class="container-table">
+        <app-table [filtro]="parametro"></app-table>
+      </div>
+    </div>
+  </div>

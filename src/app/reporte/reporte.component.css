@@ -1,0 +1,60 @@
+
+
+.container {
+    display: flex;
+    background-color: #FCFCFC;
+    height: 600px;
+  }
+  
+  .inside-container {
+    flex: 1;
+    padding: 10px;
+    justify-content: space-between;
+  }
+  
+  .input-search {
+    height: 40px;
+   
+    border: 1px solid lightgray;
+    border-radius: 3px;
+  }
+  
+  .top-content {
+    display: flex;
+  }
+  
+  .top-content input {
+      width: 150px;
+  }
+  
+  .top-content button {
+    margin-left: auto;
+    width: 150px;
+    background-color: #f8da0f; 
+    border: 1px solid #f8da0f;
+      border-radius: 3px; 
+  }
+  
+  .container-table{
+      width: 100%;
+  
+  }
+
+  th, td {
+    border: 1px solid gray;
+    padding: 8px;
+  }
+  
+  tr {
+    border-bottom: 1px solid gray;
+  }
+  
+  tr:last-child {
+    border-bottom: none;
+  }
+  .tabla-container {
+    padding-top: 20px;
+    width: 100%; /* Ajusta el valor según tus necesidades */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+  }
+  

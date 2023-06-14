@@ -1,0 +1,28 @@
+<div class="tabla-container">
+    <table>
+        <thead>
+          <tr>
+            
+            <th>Cliente</th>
+            <th>Numero Cuenta</th>
+            <th>Tipo cuenta</th>
+            <th>Saldo inicial</th>
+            <th>Total Debitos</th>
+            <th>Total Creditos</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reporte of reportes ">
+            <td >{{ reporte.perNombre}}</td>
+            <td>{{ reporte.ctaNumero }}</td>
+            <td >{{ reporte.ctaTipoCuenta }}</td>
+            <td>{{ reporte.ctaSaldoInicial }}</td>
+            <td>{{ reporte.totalDebitos }}</td>
+            <td>{{ reporte.totalCreditos }}</td>
+             
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      

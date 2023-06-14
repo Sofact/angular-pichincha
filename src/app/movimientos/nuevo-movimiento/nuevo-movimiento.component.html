@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="form-container">
+        <h1>Crear nuevo Movimiento</h1>
+      <form>
+       
+   
+        <div class="form-group">
+          <label for="nombre">Numero Cuenta</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="cuenta.ctaNumero"/>
+        
+        </div>
+        <div class="form-group">
+          <label for="genero">Tipo de Cuenta</label>
+          <input type="text" id="genero" name="genero" class="form-control" [(ngModel)]="cuenta.ctaTipoCuenta"/>
+        </div>
+        <div class="form-group">
+          <label for="edad">Saldo Inicial</label>
+          <input type="number" id="edad" name="edad" class="form-control" [(ngModel)]="cuenta.ctaSaldoInicial"/>
+        </div>
+        <div class="form-group">
+          <label for="identificacion">Estado</label>
+          <input type="text" id="identificacion" name="identificacion" class="form-control" [(ngModel)]="cuenta.ctaEstado "/>
+        </div>
+        <div class="form-group">
+            <label for="nombre">Tipo Deposito</label>
+            <select  [(ngModel)]="tipoSeleccionado" (change)="capturarTipo()"  [ngModelOptions]="{ standalone: true }">
+                <option  class="form-control" *ngFor="let tipo of tipos" [value]="tipo.tipoNombre">{{ tipo.tipoNombre }}</option>
+              </select>
+              </div>
+          <div class="form-group">
+            <label for="identificacion">Valor</label>
+            <input type="text" id="identificacion" name="identificacion" class="form-control" [(ngModel)]="movimiento.movValor "/>
+          </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" (click)="guardar()">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  

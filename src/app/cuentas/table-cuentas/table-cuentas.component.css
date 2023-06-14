@@ -1,0 +1,18 @@
+th, td {
+    border: 1px solid gray;
+    padding: 8px;
+  }
+  
+  tr {
+    border-bottom: 1px solid gray;
+  }
+  
+  tr:last-child {
+    border-bottom: none;
+  }
+  .tabla-container {
+    padding-top: 20px;
+    width: 100%; /* Ajusta el valor según tus necesidades */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+  }
+  

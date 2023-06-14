@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+  }
+  
+  .menu-column {
+    flex: 0 0 20%; 
+  }
+  
+  .content-column {
+    flex: 1; 
+    
+  }

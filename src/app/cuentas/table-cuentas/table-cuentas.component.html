@@ -1,0 +1,25 @@
+<div class="tabla-container">
+    <table>
+        <thead>
+          <tr>
+            <th>Numero Cuenta</th>
+            <th>Tipo Cuenta</th>
+            <th>Saldo inicial</th>
+            <th>Estado</th>
+            <th>Cliente</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cuenta of cuentas | filtroCuenta:filtro">
+            <td >{{ cuenta.ctaNumero }}</td>
+            <td>{{ cuenta.ctaTipoCuenta }}</td>
+            <td >{{ cuenta.ctaSaldoInicial }}</td>
+            <td>{{ cuenta.ctaEstado }}</td>
+            <td>{{ cuenta.perNombre }}</td>
+            <td><button (click)="update(cuenta.ctaId)">actualizar</button> <button (click)="delete(cuenta.ctaId)">borrar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      
