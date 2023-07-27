@@ -44,7 +44,6 @@ ngOnInit(): void {
 
   this.perId = this._router.snapshot.paramMap.get('perId');
 
-  console.log("perID",this.perId);
   this.clienteService.getClienteById(this.perId)
   .subscribe ( cliente => this.cliente = cliente
     
@@ -60,7 +59,6 @@ guardar(){
   
     this.router.navigate(['cliente'])
   })
-  console.log("Actualizando:", this.perId);
 }
 
 }

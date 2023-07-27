@@ -10,9 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./nuevo-cliente.component.css']
 })
 export class NuevoClienteComponent {
-  saveCliente() {
-    throw new Error('Method not implemented.');
-  }
+  
+ 
 
   constructor ( private clienteService: ClienteService,
                 private router: Router){}
@@ -36,17 +35,10 @@ export class NuevoClienteComponent {
 
   guardar(){
 
-   
-
     this.clienteService.saveCliente(this.cliente)
       .subscribe((response: Cliente) => {
-      
-        console.log(response);
-
-        this.router.navigate(['cliente'])
+         this.router.navigate(['cliente'])
       } )
-  
-    console.log("Guardando", this.cliente);
-  }
+   }
 
 }

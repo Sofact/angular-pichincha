@@ -32,8 +32,6 @@ export class CuentaService {
 
   getCuentaById(ctaId:string |null): Observable<Cuenta>{
 
-    
-    console.log("service::", this.urlEndpointId+"/"+ctaId);
     return this.http.get<Cuenta>(this.urlEndpointId+"/"+ctaId ).pipe(
       
         map(response => response as Cuenta)

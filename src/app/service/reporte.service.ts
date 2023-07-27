@@ -17,7 +17,7 @@ export class ReporteService {
   getReportes(fechaInicio: string, fechaFin: string, opcionSeleccionada:number): Observable<Reporte[]>{
 
     const url = `${this.urlEndpointAll}?fechaInicio=${fechaInicio}&fechaFin=${fechaFin}&opcion=${opcionSeleccionada}`;
-
+   
     return this.http.get<Reporte[]>(url).pipe(
         
       map(response => response as Reporte[])
@@ -28,7 +28,6 @@ export class ReporteService {
 
     const url = `${this.urlEndpointPdf}?fechaInicio=${fechaInicio}&fechaFin=${fechaFin}&opcion=${opcionSeleccionada}`;
 
-    console.log("Entrando");
     this.http.get(url,   { responseType: 'blob', observe: 'response' })
       .subscribe((response: HttpResponse<Blob>) => {
         const blob = new Blob([response.body as BlobPart], { type: 'application/pdf' });

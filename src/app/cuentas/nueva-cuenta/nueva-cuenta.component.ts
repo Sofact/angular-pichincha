@@ -4,6 +4,7 @@ import { Cuenta } from '../../model/Cuenta';
 import { ClienteService } from '../../service/cliente.service';
 import { CuentaService } from '../../service/cuenta.service';
 import { Persona } from '../../model/Personas';
+import { Cliente } from '../../model/Cliente';
 import { MovimientoBase } from '../../model/MovimientoBase';
 import { MovimientoService } from '../../service/movimiento.service';
 
@@ -16,7 +17,7 @@ import { MovimientoService } from '../../service/movimiento.service';
 export class NuevaCuentaComponent implements OnInit {
 
 
-  constructor ( private CuentaService: CuentaService,
+  constructor ( private cuentaService: CuentaService,
                 private clienteService: ClienteService,
                 private MovimientoService: MovimientoService,
                 private router: Router){}
@@ -44,6 +45,19 @@ movimiento: MovimientoBase= {
                   { perId: 0, perNombre: '' }
                 ];
 
+  cliente: Cliente[] = [
+                  {    perId: 0,
+                      perNombre: '',
+                      perGenero: '',
+                      perEdad: 0,
+                      perIdentificacion: '',
+                      perDireccion: '',
+                      perTelefono: '0',
+                      cliId: 0,
+                      cliContrasena: '',
+                      cliEstado: ''
+                  }]
+
   opcionSeleccionada: number =0;
 
   ngOnInit(): void {
@@ -51,25 +65,15 @@ movimiento: MovimientoBase= {
     this.clienteService.getClientes()
     .subscribe((response) => {
 
-        this.personas = response; 
+        this.cliente = response; 
       } )
   }
-
-
-
-  capturarId() {
-    console.log('ID seleccionado:', this.opcionSeleccionada);
-    
-  }
-
-  
-
 
   guardar(){
 
 
     this.cuenta.perId= this.opcionSeleccionada;
-    this.CuentaService.saveCuentas(this.cuenta)
+    this.cuentaService.saveCuentas(this.cuenta)
     .subscribe((response) => {    
 
       this.cuenta = response;
@@ -80,16 +84,16 @@ movimiento: MovimientoBase= {
       this.movimiento.movTipo = "Deposito";
 
       this.MovimientoService.saveMovimiento(this.movimiento)
-      .subscribe((response) => { 
+      .subscribe((respuesta) => { 
 
       this.router.navigate(['cuentas'])
       })
+
     } )
 
-    
-
-    console.log("Guardando", this.cuenta);
   }
+
+
 
 }
 

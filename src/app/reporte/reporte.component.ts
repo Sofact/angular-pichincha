@@ -45,14 +45,11 @@ export class ReporteComponent implements OnInit {
 
     this.parametro = this.query;
     this.router.navigate(['cuentas']);
-    console.log('Realizando búsqueda:', this.query);
   }
 
   descargar() {
 
     this.reporteService.getReportesPdf(this.fechainicio, this.fechaFin, this.opcionSeleccionada);
-
-    console.log('Guardando:', this.fechainicio, this.fechaFin, this.opcionSeleccionada);
     this.router.navigate(['reportes']);
   }
 

@@ -17,12 +17,10 @@ export class ClienteComponent {
 
     this.parametro = this.query;
     this.router.navigate(['cliente']);
-    console.log('Realizando búsqueda:', this.query);
   }
 
   guardar() {
 
-    console.log('Guardando:', this.query);
     this.router.navigate(['nuevoCliente']);
   }
 

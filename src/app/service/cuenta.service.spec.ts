@@ -24,7 +24,7 @@ describe('CuentaService', () => {
 
   it('should fetch the cuentas', () => {
     const mockCuentas: Cuenta[] = [
-      // Define your mock data here
+
     ];
 
     service.getCuentas().subscribe(cuentas => {
@@ -33,6 +33,6 @@ describe('CuentaService', () => {
 
   });
 
-  // Add more test cases for other methods in CuentaService
+
 
 });

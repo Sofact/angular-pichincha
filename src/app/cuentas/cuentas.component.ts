@@ -18,13 +18,13 @@ export class CuentasComponent {
 
     this.parametro = this.query;
     this.router.navigate(['cuentas']);
-    console.log('Realizando búsqueda:', this.query);
+
   }
 
   guardar() {
 
-    console.log('Guardando:', this.query);
     this.router.navigate(['nuevaCuenta']);
   }
+
 
 }

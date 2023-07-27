@@ -34,7 +34,6 @@ export class ClienteService  {
   getClienteById(perId:string |null): Observable<Cliente>{
 
     
-    console.log("service::", this.urlEndpointId+"/"+perId);
     return this.http.get<Cliente>(this.urlEndpointId+"/"+perId ).pipe(
       
         map(response => response as Cliente)
@@ -43,7 +42,6 @@ export class ClienteService  {
   }
   
   saveCliente(cliente: Cliente): Observable<Cliente>{
-    console.log("elclie:", cliente);
   
     return this.http.post<Cliente>(this.urlEndpointSave, cliente, {headers: this.httpHeaders})
   }
